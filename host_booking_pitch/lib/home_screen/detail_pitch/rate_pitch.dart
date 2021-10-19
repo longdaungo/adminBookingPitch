@@ -26,8 +26,8 @@ class RatePitch extends StatelessWidget{
             getAllStar()
           ),
         ),
-          Icon(Icons.favorite_border)]
-
+          Icon(Icons.favorite_border)
+          ]
         ,
       ),
     );
@@ -47,7 +47,26 @@ class RatePitch extends StatelessWidget{
     List<Icon> stars = getStars();
     List<Icon> nonStars = getNonStar();
     List<Widget> allStars = new List.from(stars)..addAll(nonStars);
-    allStars.add(Text(rates.toString() + ".0" +"999+ Bình luận"));
+    allStars.add(
+      Row(
+        children: [
+          Text(rates.toString() + "." +"999+"),
+          FeedbackButton()
+        ],
+      )
+      );
     return allStars;
+  }
+}
+
+class FeedbackButton extends StatelessWidget {
+  const FeedbackButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => Navigator.of(context).pushNamed('/feedback'),
+      child: const Text('Bình luận'),
+    );
   }
 }
