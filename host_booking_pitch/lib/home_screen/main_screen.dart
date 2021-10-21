@@ -143,11 +143,31 @@ class _BookedItemState extends State<BookedItem> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(widget.name),
+                      Text(widget.name, maxLines: 3,),
+
                       const SizedBox(height: 10),
-                      Text(widget.address, maxLines: 3),
+                      Row(
+                          children: [
+                            Text("Thời gian hoạt động: ", style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text(widget.address, maxLines: 3),
+                          ]
+                      ),
+
+
                       const SizedBox(height: 10),
-                      const Text("01234567 - Số điện thoại"),
+                      Row(
+                        children: [
+                          Text("Số điện thoại: ", style: TextStyle(
+                              fontWeight: FontWeight.bold
+                          ),
+                          ),
+                          Text("01234567"),
+                        ]
+                      )
+
                     ],
                   ),
                 ),

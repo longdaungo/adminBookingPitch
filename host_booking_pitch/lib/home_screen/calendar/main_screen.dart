@@ -138,17 +138,66 @@ class _BookedItemState extends State<BookedItem> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(widget.name),
+                      Row(
+                          children: [
+                            Text("Tên sân: ", style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text(widget.name),
+                          ]
+                      ),
                       const SizedBox(height: 10),
-                      Text(widget.namedetailPitch),
+                      Row(
+                          children: [
+                            Text("Sân: ", style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text(widget.namedetailPitch),
+                          ]
+                      ),
                       const SizedBox(height: 10),
-                      Text(widget.typePitch),
+                      Row(
+                          children: [
+                            Text("Thể loại sân: ", style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text(widget.typePitch),
+                          ]
+                      ),
                       const SizedBox(height: 10),
-                      Text(widget.address),
+                      Row(
+                          children: [
+                            Text("Giờ: ", style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text(widget.address),
+                          ]
+                      ),
                       const SizedBox(height: 10),
-                      Text(widget.datebooking),
+                      Row(
+                          children: [
+                            Text("Ngày đặt sân: ", style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text(widget.datebooking),
+                          ]
+                      ),
+
                       const SizedBox(height: 10),
-                      const Text("800,000đ - Tiền mặt"),
+                      Row(
+                          children: [
+                            Text("Tiền mặt: ", style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            const Text("800,000đ"),
+                          ]
+                      )
                     ],
                   ),
                 ),
