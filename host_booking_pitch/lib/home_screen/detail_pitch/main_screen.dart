@@ -58,11 +58,7 @@ class MainScreenDetailPitch extends StatelessWidget{
       ));
     }
 
-    if(pitchModel.totalPitchfusan == 0){
-      list.add(TitlePitch(10.0, 10.0, "Sân 11("+"0"+")",15.0));
-    }
 
-    list.add(ButtonPay());
     if(pitchModel.totalPitch7 != 0){
       var listTypePitch = listDetailPitchByType(pitchModel, "Sân 7");
       list.add(TitlePitch(10.0, 10.0, "Sân 7("+pitchModel.totalPitch7.toString()+")",15.0));
@@ -72,11 +68,6 @@ class MainScreenDetailPitch extends StatelessWidget{
       ));
     }
 
-    if(pitchModel.totalPitchfusan == 0){
-      list.add(TitlePitch(10.0, 10.0, "Sân 11("+"0"+")",15.0));
-    }
-
-    list.add(ButtonPay());
     if(pitchModel.totalPitch11 != 0){
       var listTypePitch = listDetailPitchByType(pitchModel, "Sân 11");
       list.add(TitlePitch(10.0, 10.0, "Sân 11("+pitchModel.totalPitch11.toString()+")",15.0));
@@ -85,11 +76,7 @@ class MainScreenDetailPitch extends StatelessWidget{
         child: DetailPitches(listTypePitch,pitchModel),
       ));
     }
-    if(pitchModel.totalPitchfusan == 0){
-      list.add(TitlePitch(10.0, 10.0, "Sân 11("+"0"+")",15.0));
-    }
 
-    list.add(ButtonPay());
     if(pitchModel.totalPitchfusan != 0){
       var listTypePitch = listDetailPitchByType(pitchModel, "Sân fusan");
       list.add(TitlePitch(10.0, 10.0, "Sân fusan("+pitchModel.totalPitchfusan.toString()+")",15.0));
@@ -98,9 +85,7 @@ class MainScreenDetailPitch extends StatelessWidget{
         child: DetailPitches(listTypePitch,pitchModel),
       ));
     }
-    if(pitchModel.totalPitchfusan == 0){
-      list.add(TitlePitch(10.0, 10.0, "Sân fusan("+"0"+")",15.0));
-    }
+
     list.add(ButtonPay());
     return list.map((e) => e);
   }

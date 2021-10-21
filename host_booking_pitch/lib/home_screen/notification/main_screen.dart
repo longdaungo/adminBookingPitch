@@ -13,7 +13,7 @@ class NotificationPitch extends StatelessWidget {
     return
       Scaffold(
           appBar: AppBar(
-            title: const Text("Lịch đặt sân", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+            title: const Text("Thông báo", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
             centerTitle: true,
             backgroundColor: Colors.green,
           ),
@@ -24,7 +24,7 @@ class NotificationPitch extends StatelessWidget {
             ],
           ),
           backgroundColor: Colors.grey[200],
-          bottomNavigationBar: FooterMenu(3),
+          bottomNavigationBar: FooterMenu(2),
         );
   }
 }
@@ -56,7 +56,7 @@ class BookedBottomPart extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text("Sửa đổi", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+        const Text("", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
         Container(
           child: Row(
             children: [

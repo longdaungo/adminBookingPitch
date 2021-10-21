@@ -19,10 +19,10 @@ class FooterMenu extends StatelessWidget {
               color: selectedPage == 0 ? Colors.green : null,
             ),
             title: Text("Trang chủ")),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.my_library_books,
-                color: selectedPage == 1 ? Colors.green : null),
-            title: Text("Quản lý sân banh")),
+        // BottomNavigationBarItem(
+        //     icon: Icon(Icons.my_library_books,
+        //         color: selectedPage == 1 ? Colors.green : null),
+        //     title: Text("Quản lý sân banh")),
         BottomNavigationBarItem(
             icon: Icon(Icons.fact_check), title: Text("Lịch đặt các sân")),
         BottomNavigationBarItem(
@@ -53,7 +53,7 @@ class FooterMenu extends StatelessWidget {
                 )
               ],
             ),
-            title: Text('Notifications')),
+            title: Text('Thông báo')),
         BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_rounded), title: Text("Tài khoản"))
       ],
@@ -62,17 +62,17 @@ class FooterMenu extends StatelessWidget {
           case 0:
             Navigator.of(context).pushNamed('/');
             break;
+          // case 1:
+          //   Navigator.of(context)
+          //       .pushNamed('/screen.home_screen.calendar_today');
+          //   break;
           case 1:
-            Navigator.of(context)
-                .pushNamed('/screen.home_screen.calendar_today');
-            break;
-          case 2:
             Navigator.of(context).pushNamed('/calendar');
             break;
-          case 3:
+          case 2:
             Navigator.of(context).pushNamed('/notification');
             break;
-          case 4:
+          case 3:
             Navigator.of(context).pushNamed('/account');
             break;
         }

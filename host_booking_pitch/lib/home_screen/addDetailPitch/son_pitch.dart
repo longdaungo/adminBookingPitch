@@ -11,7 +11,7 @@ class SonPage extends StatefulWidget {
 class MapScreenState extends State<SonPage>
     with SingleTickerProviderStateMixin {
   bool _status = true;
-  String? _selectedType = "concac";
+  String? _selectedType = "Sân 5";
   final FocusNode myFocusNode = FocusNode();
 
   @override
@@ -181,7 +181,7 @@ class MapScreenState extends State<SonPage>
                               new Flexible(                         
                                 child: new DropdownButton<String>(
                                   value: _selectedType,
-                                  items: <String>['cailon', 'concac', 'vubu', 'ditbu'].map((String value) {
+                                  items: <String>['Sân 5', 'Sân 7', 'Sân 11', 'Sân futsal'].map((String value) {
                                     return DropdownMenuItem<String>(
                                       value: value,
                                       child: Text(value),
@@ -265,8 +265,7 @@ class MapScreenState extends State<SonPage>
           ),
         ],
       ),
-    ),
-    bottomNavigationBar: FooterMenu(4));
+    ));
   }
 
   @override
