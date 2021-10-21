@@ -72,13 +72,6 @@ class BookedBottomPart extends StatelessWidget {
                 color: Colors.green,
                 textColor: Colors.white,
               )
-              ,
-              FlatButton(
-                onPressed: () {},
-                child: const Text("Xóa", style: TextStyle(fontWeight: FontWeight.bold)),
-                color: Colors.red,
-                textColor: Colors.white,
-              ),
             ],
           ),
         )

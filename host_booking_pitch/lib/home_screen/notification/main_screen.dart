@@ -59,14 +59,7 @@ class BookedBottomPart extends StatelessWidget {
         const Text("", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
         Container(
           child: Row(
-            children: [
-              FlatButton(
-                onPressed: () {},
-                child: const Text("Cấp nhận", style: TextStyle(fontWeight: FontWeight.bold)),
-                color: Colors.green,
-                textColor: Colors.white,
-              )
-              ,
+            children: [             
               FlatButton(
                 onPressed: () {},
                 child: const Text("Từ chối", style: TextStyle(fontWeight: FontWeight.bold)),
