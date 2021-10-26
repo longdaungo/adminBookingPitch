@@ -71,7 +71,7 @@ class DetailPitch extends StatelessWidget {
                             border:
                                 Border.all(color: Colors.green, width: 5.0)),
                         child: Center(
-                            child: Text("Sửa",
+                            child: Text("Cập nhật",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(color: Colors.white))),
                       ),

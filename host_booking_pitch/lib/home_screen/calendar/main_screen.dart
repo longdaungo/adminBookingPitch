@@ -41,53 +41,126 @@ class _BookedPitchState extends State<BookedPitch> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          BookedItem("Mason Mount", "", "", "assets/images/mason_mount.png", "Khu liên hiệp thể thao TNG", "6:00-7:00","06-01-2021","Sân A","Thể loại sân 5"),
-          BookedItem("Hà Đức Jame", "", "", "assets/images/haducjame.png", "Sân bóng đá Hiệp Phú", "13:00-14:00","06-10-2021","Sân A","Thể loại 5")
+          BookedItem("Mason Mount", "", "", "assets/images/mason_mount.png", "Khu liên hiệp thể thao TNG", "6:00-7:00","06-01-2021","Sân A","Thể loại sân 5",BookedBottomPart()),
+          BookedItem("Hà Đức Jame", "", "", "assets/images/haducjame.png", "Sân bóng đá Hiệp Phú", "13:00-14:00","06-10-2021","Sân A","Thể loại 5", BookedBottomPart())
         ],
       ),
     );
   }
 }
 
-// class BookedBottomPart extends StatelessWidget {
-//   const BookedBottomPart({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//       children: [
-//         const Text("Sửa đổi", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-//         Container(
-//           child: Row(
-//             children: [
-//               FlatButton(
-//                 onPressed: () {},
-//                 child: const Text("Cấp nhận", style: TextStyle(fontWeight: FontWeight.bold)),
-//                 color: Colors.green,
-//                 textColor: Colors.white,
-//               )
-//               ,
-//               FlatButton(
-//                 onPressed: () {},
-//                 child: const Text("Từ chối", style: TextStyle(fontWeight: FontWeight.bold)),
-//                 color: Colors.red,
-//                 textColor: Colors.white,
-//               ),
-//             ],
-//           ),
-//         )
-//
-//
-//       ],
-//     );
-//   }
-// }
+class BookedBottomPart extends StatelessWidget {
+  const BookedBottomPart({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const Text("", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+        Container(
+          child: Row(
+            children: [             
+              FlatButton(
+                onPressed: () {
+                  showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text('Từ chối đặt sân'),
+                      content: CancelForm(),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'Cancel'),
+                          child: const Text('Cancel'),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'OK'),
+                          child: const Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: const Text("Hủy", style: TextStyle(fontWeight: FontWeight.bold)),
+                color: Colors.red,
+                textColor: Colors.white,
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class CancelForm extends StatefulWidget {
+  CancelForm({Key? key}) : super(key: key);
+
+  @override
+  _CancelFormState createState() => _CancelFormState();
+}
+
+List<String> reasonList = [
+  'Bảo trì sân',
+  'Tạm đóng cửa',
+  'Lý do khác'
+];
+
+class _CancelFormState extends State<CancelForm> {
+  var selected = reasonList.elementAt(0);
+  var isVisibility = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 400,
+        child: SingleChildScrollView(child: Column(children: getListReason())));
+  }
+
+  List<Widget> getListReason() {
+    List<Widget> reasonItemList = [];
+
+    for (int i = 0; i < reasonList.length; i++) {
+      reasonItemList.add(ListTile(
+          title: Text(reasonList.elementAt(i)),
+          leading: Radio(
+              value: reasonList.elementAt(i),
+              groupValue: selected,
+              onChanged: (value) {
+                setState(() {
+                  selected = value.toString();
+                  if ('Lý do khác' == value.toString()) {
+                    isVisibility = true;
+                  } else {
+                    isVisibility = false;
+                  }
+                });
+              })));
+    }
+    reasonItemList.add(Visibility(
+        visible: isVisibility,
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: 'Lý do bạn hủy sân',
+            hintStyle: TextStyle(
+              color: Colors.grey,
+              fontSize: 14.0,
+              fontWeight: FontWeight.w400,
+              fontStyle: FontStyle.normal,
+            ),
+            border: OutlineInputBorder(),
+          ),
+          maxLines: 8,
+          maxLength: 500,
+        )));
+    return reasonItemList;
+  }
+}
 
 class BookedItem extends StatefulWidget {
-  var type, time, date, img, name, address, datebooking, namedetailPitch, typePitch;
+  var type, time, date, img, name, address, datebooking, namedetailPitch, typePitch, button;
 
-  BookedItem(this.type, this.time, this.date, this.img, this.name, this.address, this.datebooking,this.namedetailPitch, this.typePitch,  {Key? key}) : super(key: key);
+  BookedItem(this.type, this.time, this.date, this.img, this.name, this.address, this.datebooking,this.namedetailPitch, this.typePitch, this.button,  {Key? key}) : super(key: key);
 
   @override
   State<BookedItem> createState() => _BookedItemState();
@@ -204,6 +277,7 @@ class _BookedItemState extends State<BookedItem> {
               ],
             ))),
             const Divider(color: Colors.black),
+            widget.button
           ],
         ),
       );
