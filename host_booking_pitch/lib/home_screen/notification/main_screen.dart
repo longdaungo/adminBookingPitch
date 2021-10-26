@@ -61,7 +61,25 @@ class BookedBottomPart extends StatelessWidget {
           child: Row(
             children: [             
               FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text('Từ chối đặt sân'),
+                      content: CancelForm(),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'Cancel'),
+                          child: const Text('Cancel'),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'OK'),
+                          child: const Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
                 child: const Text("Từ chối", style: TextStyle(fontWeight: FontWeight.bold)),
                 color: Colors.red,
                 textColor: Colors.white,
@@ -69,10 +87,72 @@ class BookedBottomPart extends StatelessWidget {
             ],
           ),
         )
-
-
       ],
     );
+  }
+}
+
+class CancelForm extends StatefulWidget {
+  CancelForm({Key? key}) : super(key: key);
+
+  @override
+  _CancelFormState createState() => _CancelFormState();
+}
+
+List<String> reasonList = [
+  'Bảo trì sân',
+  'Tạm đóng cửa',
+  'Lý do khác'
+];
+
+class _CancelFormState extends State<CancelForm> {
+  var selected = reasonList.elementAt(0);
+  var isVisibility = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 400,
+        child: SingleChildScrollView(child: Column(children: getListReason())));
+  }
+
+  List<Widget> getListReason() {
+    List<Widget> reasonItemList = [];
+
+    for (int i = 0; i < reasonList.length; i++) {
+      reasonItemList.add(ListTile(
+          title: Text(reasonList.elementAt(i)),
+          leading: Radio(
+              value: reasonList.elementAt(i),
+              groupValue: selected,
+              onChanged: (value) {
+                setState(() {
+                  selected = value.toString();
+                  if ('Lý do khác' == value.toString()) {
+                    isVisibility = true;
+                  } else {
+                    isVisibility = false;
+                  }
+                });
+              })));
+    }
+    reasonItemList.add(Visibility(
+        visible: isVisibility,
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: 'Lý do bạn hủy sân',
+            hintStyle: TextStyle(
+              color: Colors.grey,
+              fontSize: 14.0,
+              fontWeight: FontWeight.w400,
+              fontStyle: FontStyle.normal,
+            ),
+            border: OutlineInputBorder(),
+          ),
+          maxLines: 8,
+          maxLength: 500,
+        )));
+    return reasonItemList;
   }
 }
 
