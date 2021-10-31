@@ -15,8 +15,8 @@ class TitlePitch extends StatelessWidget{
           horizontal: _marginHorizontal
       ),
       child: Padding(
-          padding: EdgeInsets.fromLTRB(1,0,1,0)
-          ,child: Text(_title,style: TextStyle(fontWeight: FontWeight.bold,
+          padding: EdgeInsets.fromLTRB(1,0,1,0),
+          child: Text(_title,style: TextStyle(fontWeight: FontWeight.bold,
       fontSize: _fontWeight))),
     );
   }

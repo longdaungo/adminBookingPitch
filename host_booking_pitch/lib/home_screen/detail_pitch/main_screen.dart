@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:host_booking_pitch/home_screen/detail_pitch/addVoucher.dart';
 import 'package:host_booking_pitch/home_screen/detail_pitch/rate_pitch.dart';
 import 'package:host_booking_pitch/home_screen/detail_pitch/title_pitches.dart';
 import 'package:host_booking_pitch/models/detail_type_pitch.dart';
@@ -27,7 +28,21 @@ class MainScreenDetailPitch extends StatelessWidget{
            children: [
              ImageBanner(pitchModel.imgDetailPatch, Colors.grey),
              TitlePitch(10.0, 10.0, pitchModel.name,30.0),
-             RatePitch(10.0, 10.0, pitchModel.rates),
+             Padding(
+              padding: EdgeInsets.only(right: 220.0, left: 5),
+              child: Container(
+                  child: new RaisedButton(
+                child: new Text("Thêm Voucher"),
+                textColor: Colors.white,
+                color: Colors.pink,
+                onPressed: () {
+                  Navigator.of(context).pushNamed('addVoucher');
+                },
+                shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(20.0)),
+              )),
+            ),
+             RatePitch(5.0, 10.0, pitchModel.rates),
              TitlePitch(10.0, 10.0, "Các loại sân",20.0),
            ]..addAll(showDetailPitch(pitchModel)),
          )

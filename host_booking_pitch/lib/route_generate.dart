@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:host_booking_pitch/home_screen/add_mother_pitch/mother_pitch.dart';
+import 'package:host_booking_pitch/home_screen/detail_pitch/addVoucher.dart';
 import 'home_screen/addDetailPitch/son_pitch.dart';
 import 'home_screen/calendar/main_screen.dart';
 import 'home_screen/detail_pitch/main_screen.dart';
@@ -41,6 +42,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => UpdateSonPage());
       case '/feedback':
         return MaterialPageRoute(builder: (_) => ViewFeedback());
+      case 'addVoucher':
+        return MaterialPageRoute(builder: (_) => AddVoucherPage());
       default:
         return MaterialPageRoute(builder: (_) => CalendarToday());
     }

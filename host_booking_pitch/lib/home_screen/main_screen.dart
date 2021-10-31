@@ -60,7 +60,7 @@ class BookedBottomPart extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text("Sửa đổi", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+        const Text("", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
         Container(
           child: Row(
             children: [
