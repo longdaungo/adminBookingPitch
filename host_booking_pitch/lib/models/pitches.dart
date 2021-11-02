@@ -16,24 +16,24 @@ class PitchesModel{
             "300m", 3, 4,
             1, 0, 0,
             <DetailTypePitchModel>[
-              DetailTypePitchModel("Sân A","assets/images/sanbanh1.png", "Sân 5", "100 nghìn đồng", "200 nghìn đông"),
-              DetailTypePitchModel("Sân B","assets/images/sanbanh2.jpg", "Sân 5", "100 nghìn đồng", "200 nghìn đông"),
-              DetailTypePitchModel("Sân C","assets/images/sanbanh3.jpg", "Sân 5", "100 nghìn đồng", "200 nghìn đông"),
-              DetailTypePitchModel("Sân D","assets/images/sanbanh4.jpg", "Sân 5", "100 nghìn đồng", "200 nghìn đông"),
-              DetailTypePitchModel("Sân E","assets/images/sanbanh5.jpg", "Sân 7", "100 nghìn đồng", "200 nghìn đông")
+              DetailTypePitchModel("Sân A","assets/images/sanbanh1.png", "Sân 5", "100.000VND/1h", "200.000VND/1h"),
+              DetailTypePitchModel("Sân B","assets/images/sanbanh2.jpg", "Sân 5", "100.000VND/1h", "200.000VND/1h"),
+              DetailTypePitchModel("Sân C","assets/images/sanbanh3.jpg", "Sân 5", "100.000VND/1h", "200.000VND/1h"),
+              DetailTypePitchModel("Sân D","assets/images/sanbanh4.jpg", "Sân 5", "100.000VND/1h", "200.000VND/1h"),
+              DetailTypePitchModel("Sân E","assets/images/sanbanh5.jpg", "Sân 7", "100.000VND/1h", "200.000VND/1h")
             ]),
          PitchModel("2","Sân nhà vĩnh hiệp", "Quận Gò Vấp","assets/images/sanbanh2.jpg","assets/images/DetailPitch.png", "6:00-9:00",
              "200m", 2, 0,
              0, 1, 0,
              <DetailTypePitchModel>[
-               DetailTypePitchModel("Sân A","assets/images/sanbanh1.png", "Sân 11", "100 nghìn đồng", "200 nghìn đông"),
+               DetailTypePitchModel("Sân A","assets/images/sanbanh1.png", "Sân 11", "100.000VND/1h", "200.000VND/1h"),
              ]),
          PitchModel("3","Sân nhà hữu nhường", "Quận Gò Vấp","assets/images/sanbanh3.jpg","assets/images/DetailPitch.png", "6:00-9:00",
              "100m", 1, 2,
              0, 0, 0,
              <DetailTypePitchModel>[
-               DetailTypePitchModel("Sân A","assets/images/sanbanh1.png", "Sân 5", "100 nghìn đồng", "200 nghìn đông"),
-               DetailTypePitchModel("Sân B","assets/images/sanbanh1.png", "Sân 5", "100 nghìn đồng", "200 nghìn đông")
+               DetailTypePitchModel("Sân A","assets/images/sanbanh1.png", "Sân 5", "100.000VND/1h", "200.000VND/1h"),
+               DetailTypePitchModel("Sân B","assets/images/sanbanh1.png", "Sân 5", "100.000VND/1h", "200.000VND/1h")
              ]),
       ]
     );
@@ -58,19 +58,19 @@ class PitchesModel{
               <DetailTypePitchModel>[
                 DetailTypePitchModel(
                     "Sân A", "assets/images/sanbanh1.png", "Sân 5",
-                    "100 nghìn đồng", "200 nghìn đông"),
+                    "100.000VND/1h", "200.000VND/1h"),
                 DetailTypePitchModel(
                     "Sân B", "assets/images/sanbanh2.jpg", "Sân 5",
-                    "100 nghìn đồng", "200 nghìn đông"),
+                    "100.000VND/1h", "200.000VND/1h"),
                 DetailTypePitchModel(
                     "Sân C", "assets/images/sanbanh3.jpg", "Sân 5",
-                    "100 nghìn đồng", "200 nghìn đông"),
+                    "100.000VND/1h", "200.000VND/1h"),
                 DetailTypePitchModel(
                     "Sân D", "assets/images/sanbanh4.jpg", "Sân 5",
-                    "100 nghìn đồng", "200 nghìn đông"),
+                    "100.000VND/1h", "200.000VND/1h"),
                 DetailTypePitchModel(
                     "Sân E", "assets/images/sanbanh5.jpg", "Sân 7",
-                    "100 nghìn đồng", "200 nghìn đông")
+                    "100.000VND/1h", "200.000VND/1h")
               ]),
           PitchModel(
               "5",
@@ -88,7 +88,7 @@ class PitchesModel{
               <DetailTypePitchModel>[
                 DetailTypePitchModel(
                     "Sân A", "assets/images/sanbanh1.png", "Sân 11",
-                    "100 nghìn đồng", "200 nghìn đông"),
+                    "100.000VND/1h", "200.000VND/1h"),
               ]),
           PitchModel(
               "6",
@@ -106,10 +106,10 @@ class PitchesModel{
               <DetailTypePitchModel>[
                 DetailTypePitchModel(
                     "Sân A", "assets/images/sanbanh1.png", "Sân 5",
-                    "100 nghìn đồng", "200 nghìn đông"),
+                    "100.000VND/1h", "200.000VND/1h"),
                 DetailTypePitchModel(
                     "Sân B", "assets/images/sanbanh1.png", "Sân 5",
-                    "100 nghìn đồng", "200 nghìn đông")
+                    "100.000VND/1h", "200.000VND/1h")
               ]),
         ]
     );

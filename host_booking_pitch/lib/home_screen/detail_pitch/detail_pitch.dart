@@ -23,7 +23,7 @@ class DetailPitch extends StatelessWidget {
         color: Colors.grey[200],
       ),
       margin: EdgeInsets.fromLTRB(10.0, 0, 0.0, 0),
-      constraints: BoxConstraints.expand(width: 200),
+      constraints: BoxConstraints.expand(width: 220),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
